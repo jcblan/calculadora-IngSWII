@@ -26,7 +26,7 @@ describe('Test CalculadoraFacade', function() {
     
 });
 
-describe('Test 100 cifras', function() {
+describe('Test 100 y 1000 cifras', function() {
     it('100 cifras', function() {
         let cal = new CalculadoraFacade();
         let muchosNueves = "nueve";
@@ -36,6 +36,19 @@ describe('Test 100 cifras', function() {
         }
         let numero = cal.calcular(muchosNueves, "uno", "sumar");
         for(let i = 0; i < 100; i++){
+            muchosMillones = muchosMillones.concat("0");
+        }
+        expect(numero).equal(Number(muchosMillones));
+    });
+    it('1000 cifras', function() {
+        let cal = new CalculadoraFacade();
+        let muchosNueves = "nueve";
+        let muchosMillones = "1";
+        for(let i = 1; i < 1000; i++){
+            muchosNueves = muchosNueves.concat(" nueve");
+        }
+        let numero = cal.calcular(muchosNueves, "uno", "sumar");
+        for(let i = 0; i < 1000; i++){
             muchosMillones = muchosMillones.concat("0");
         }
         expect(numero).equal(Number(muchosMillones));
