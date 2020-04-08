@@ -1,4 +1,4 @@
-import iStrategy from "./iStrategy";
+import iStrategy from "./IStrategy";
 
 
 class ProductoStrategy implements iStrategy{
